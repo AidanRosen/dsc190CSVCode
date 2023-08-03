@@ -9,13 +9,13 @@ def makeDF(csvPath):
     return df
 
 
-#dateLower = sys.argv[2]
-#dateUpper = sys.argv[3]
+dateLower = sys.argv[2] + " " + sys.argv[3]
+dateUpper = sys.argv[4] + " " + sys.argv[5]
 
 print(sys.argv[1])
 df = makeDF(sys.argv[1])
 
-#df[df.date.between(dateLower, dateUpper)]
+df[df.Time.between(dateLower, dateUpper)]
 print(df) 
 print(df.describe())
 fig = df.plot(x="Time", y="Humidity (%)")
